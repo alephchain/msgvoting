@@ -12,6 +12,8 @@ agents = [x.get_score() for x in msg_board.agents]
 msgs = [x.get_score() for x in msg_board.msgs]
 
 plt.plot(sorted(msgs))
+plt.ylabel("Score")
+plt.xlabel("Messages")
 # plt.plot(sorted(agents))
 # plt.plot(msg_board.match_list)
 
