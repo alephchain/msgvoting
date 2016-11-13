@@ -1,20 +1,18 @@
-from util import *
-from numpy import *
-import matplotlib.pyplot as plt
+from plotter import *
+from time import time
 from message_board import *
+
+
+start_time = time()
+
 
 msg_board = MessageBoard()
 for i in range(step_count):
     msg_board.next()
     # print "run: " + str(i)
 
-agents = [x.get_score() for x in msg_board.agents]
-msgs = [x.get_score() for x in msg_board.msgs]
+plot(msg_board)
 
-plt.plot(sorted(msgs))
-plt.ylabel("Score")
-plt.xlabel("Messages")
-# plt.plot(sorted(agents))
-# plt.plot(msg_board.match_list)
+end_time = time()
 
-plt.show()
+print end_time - start_time
