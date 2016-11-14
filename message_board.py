@@ -14,8 +14,7 @@ class MessageBoard:
         self.msgs = []
         self.agents = []
 
-        for i in range(msg_count):
-            self.msgs.append(Message(generate_msg_properties()))
+        self.post_new_messages()
 
         for i in range(agent_count):
             # self.agents[i].append = Agent(i, generate_boolean_function())
@@ -30,6 +29,9 @@ class MessageBoard:
     def next(self):
         self.time_step += 1
 
+        self.scoring()
+
+    def scoring(self):
         match_message_list = [[] for _ in range(msg_count)]
 
         total_score = 0
@@ -54,3 +56,11 @@ class MessageBoard:
                             agent.add_score(len(match) ** 2 / float(total_score ** 2))
                         self.msgs[j].add_score(message_score * (len(match) ** 2 / float(total_score ** 2)))
                 j += 1
+
+    def post_new_messages(self):
+        new_msgs = []
+        for i in range(msg_count):
+            new_msgs.append(Message(generate_msg_properties()))
+
+        self.msgs = new_msgs
+
