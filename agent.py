@@ -2,12 +2,12 @@ class Agent:
     def __init__(self, agent_id, boolean_function):
         self.agent_id = agent_id
 
-        self.boolean_function = boolean_function
-        self.score = 50.00
-        self.post_probability = 0.1
+        self.match = boolean_function
+        self.score = 50.0
+        self.post_probability = 5
 
     def is_match(self, msg):
-        match = self.boolean_function == msg
+        match = self.match == msg
         return match
         # return 1 == 1
 
@@ -19,3 +19,12 @@ class Agent:
 
     def get_agent_id(self):
         return self.agent_id
+
+    def get_match(self):
+        return self.match
+
+    def is_posting(self, value):
+        if self.post_probability > value:
+            return True
+
+        return False

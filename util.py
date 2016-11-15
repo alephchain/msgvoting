@@ -13,6 +13,7 @@ def generate_boolean_function():
 
     return bf
 
+
 def generate_msg_properties():
     bf = ""
     for i in range(msg_property_size):
@@ -20,5 +21,3 @@ def generate_msg_properties():
 
     return bf
 
-def generate_message_location():
-    return randint(0, msg_count - 1)

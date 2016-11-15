@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
 
+
 def plot(msg_board):
     agents = [x.get_score() for x in msg_board.agents]
-    msgs = [x.get_score() for x in msg_board.msgs]
+    msgs = [x.get_total_score() for x in msg_board.msgs]
 
     plt.subplot(211)
     plt.title('Message Returns')
