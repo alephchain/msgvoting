@@ -17,3 +17,6 @@ class Message:
     def get_total_score(self):
         return self.total_score
 
+    def get_content(self):
+        return self.content
+

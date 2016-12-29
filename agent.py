@@ -4,7 +4,7 @@ class Agent:
 
         self.match = boolean_function
         self.score = 50.0
-        self.post_probability = 5
+        self.post_probability = 50
 
     def is_match(self, msg):
         match = self.match == msg

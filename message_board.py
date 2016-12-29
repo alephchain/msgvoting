@@ -62,8 +62,8 @@ class MessageBoard:
             j = 0
             for match in match_message_list:
                 message_score = 0
-                new_score = len(match) ** 2 / float(total_score ** 2)
                 if match:
+                    new_score = len(match) ** 2 / float(total_score ** 2)
                     for match_agent in match:
 
                         if agent.get_agent_id() == match_agent.get_agent_id():

@@ -15,4 +15,4 @@ plot(msg_board)
 
 end_time = time()
 
-print end_time - start_time
+print (end_time - start_time)
